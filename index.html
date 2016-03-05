@@ -64,7 +64,8 @@
 </li>
 </ul>
 
-<p>Step Definitions</p>
+<h2>
+<a id="step-definitions" class="anchor" href="#step-definitions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step Definitions</h2>
 
 <p>Given(/^I go to bookmyshow website$/) do
     visit "<a href="https://in.bookmyshow.com/chennai">https://in.bookmyshow.com/chennai</a>"
@@ -98,6 +99,13 @@ end</p>
  find(".//</em>[<a href="https://github.com/id" class="user-mention">@id</a>='dSignInErrorPassword']/span[2]").text.should have_text(errortext)
 end</p>
 
+<p>Then(/^I verify in the footer section of movies by language has the following languages$/) do |table|
+  # table is a Cucumber::Core::Ast::DataTable
+  table.hashes.each_with_index do |hash,index|
+    find("//div[contains(<a href="https://github.com/class" class="user-mention">@class</a>,'movies-by-language')]//li[#{index+1}]//span").text.should eq(hash["Languages"])<br>
+  end
+end</p>
+
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
 
@@ -118,6 +126,20 @@ And I enter the password as "xyz"
 And I click on the sign in button
 Then I verify the error text as "The username or password you have entered is incorrect"
 </code></pre>
+
+<p><a href="https://github.com/wip" class="user-mention">@wip</a>
+    Scenario: As a user, I want to see all the languages of which the movies are listed in bookmyshow
+        Then I verify in the footer section of movies by language has the following languages
+            | Languages |<br>
+            | Hindi     |<br>
+            | English   |<br>
+            | Marathi   |<br>
+            | Bengali   |<br>
+            | Tamil     |<br>
+            | Telugu    |<br>
+            | Malayalam |<br>
+            | Bhojpuri  |<br>
+            | Kannada   | </p>
       </section>
     </div>
 
