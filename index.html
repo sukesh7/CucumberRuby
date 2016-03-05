@@ -97,6 +97,27 @@ end</p>
 <p>Then(/^I verify the error text as "([^"]<em>)"$/) do |errortext|
  find(".//</em>[<a href="https://github.com/id" class="user-mention">@id</a>='dSignInErrorPassword']/span[2]").text.should have_text(errortext)
 end</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<p>Feature: Testing the bookmyshow website</p>
+
+<pre><code>Background:
+    Given I go to bookmyshow website
+    And I maximize browser
+
+Scenario: As a user, I want to visit the bookmyshow website
+    Then I verify the experiences link is available
+
+
+Scenario: As a user, I want to be notified with the error text for wrong credentials
+When I click on the signin link
+And I enter the username as "xyz@gmail.com"
+And I enter the password as "xyz"
+And I click on the sign in button
+Then I verify the error text as "The username or password you have entered is incorrect"
+</code></pre>
       </section>
     </div>
 
