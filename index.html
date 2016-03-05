@@ -63,6 +63,40 @@
 <li>Capybara - <a href="https://gist.github.com/zhengjia/428105">Cheat Sheet</a>
 </li>
 </ul>
+
+<p>Step Definitions</p>
+
+<p>Given(/^I go to bookmyshow website$/) do
+    visit "<a href="https://in.bookmyshow.com/chennai">https://in.bookmyshow.com/chennai</a>"
+end</p>
+
+<p>Then(/^I verify the experiences link is available$/) do
+  find("//a[contains(<a href="https://github.com/href" class="user-mention">@href</a>,'<a href="http://in.bookmyshow.com/chennai/experiences/')%5D%22).text.should">http://in.bookmyshow.com/chennai/experiences/')]").text.should</a> eq("EXPERIENCES")
+end</p>
+
+<p>Given(/^I maximize browser$/) do
+    page.driver.browser.manage.window.maximize
+end</p>
+
+<p>When(/^I click on the signin link$/) do
+  find(".//*[<a href="https://github.com/id" class="user-mention">@id</a>='preSignIn']").click
+end</p>
+
+<p>When(/^I enter the username as "([^"]<em>)"$/) do |username|
+  find(".//</em>[<a href="https://github.com/id" class="user-mention">@id</a>='iUserName']").set username
+end</p>
+
+<p>When(/^I enter the password as "([^"]<em>)"$/) do |password|
+  find(".//</em>[<a href="https://github.com/id" class="user-mention">@id</a>='iPwd']").set password
+end</p>
+
+<p>And(/^I click on the sign in button$/) do
+  find(".//*[<a href="https://github.com/id" class="user-mention">@id</a>='iUserNameParent']/a/div").click
+end</p>
+
+<p>Then(/^I verify the error text as "([^"]<em>)"$/) do |errortext|
+ find(".//</em>[<a href="https://github.com/id" class="user-mention">@id</a>='dSignInErrorPassword']/span[2]").text.should have_text(errortext)
+end</p>
       </section>
     </div>
 
